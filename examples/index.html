@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    pre {
+      background: lightgray;
+      border: 1px solid black;
+      padding: 1em;
+      width: 100em;
+      max-height: 40em;
+      overflow:scroll;
+    }
+    div.viz {
+      width: 100em;
+      height: 30em;
+    }
+    .node {
+      stroke: #222;
+      stroke-width: 1.5px;
+    }
+    .node.Person {
+      fill: #888;
+    }
+    .node.Project {
+      fill: #BBB;
+    }
+    .node.Movie {
+      fill: #444;
+    }
+    .link {
+      stroke: #999;
+      stroke-opacity: .6;
+      stroke-width: 1px;
+    }
+  </style>
+</head>
+<body>
+<pre viz="basic">
+	create (me:Person {name:"Michael"})
+	create (peter:Person {name:"Peter"})
+	create (graphgist:Project {name:"GraphGist"})
+	create (me)-[:KNOWS {since:2006}]->(peter),
+	       (me)-[:WORKS_ON]->(graphgist)
+	CREATE (graphgist)<-[:WORKS_ON]-(peter)
+</pre>
+<div class="viz" id="basic">
+</div>
+<script src="http://localhost:3000/main.js"></script>
+</body>
+</html>
