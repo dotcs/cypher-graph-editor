@@ -1,18 +1,18 @@
 'use strict';
 
+// CSS styles
+require('style-loader!css-loader!normalize.css/normalize.css');
+require('style-loader!css-loader!codemirror/lib/codemirror.css');
+require('./src/styles/main.scss');
+
 var React = require('react');
-var CypherInput = require('./src/react_components/cypherInput');
+var App = require('./src/react_components/app');
 
-_.each(window.document.getElementsByClassName('js-react-cypherinput'), function(el) {
-  var attributes = el.attributes;
+var injectTapEventPlugin = require('react-tap-event-plugin');
+//Needed for onTouchTap
+//Can go away when react 1.0 release
+//Check this repo:
+//https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
 
-  var initStatement;
-  if ('data-initial-statement' in attributes) {
-    initStatement = attributes['data-initial-statement'].value;
-  }
-
-  React.render(<CypherInput
-    statement={initStatement}
-    />, el);
-
-});
+React.render(<App />, window.document.body);

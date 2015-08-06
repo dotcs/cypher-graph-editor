@@ -1,0 +1,39 @@
+.cypherInput {}
+
+  .cypherInput__options {
+    & > * {
+      margin: 1em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cypherInput__options {
+      display: flex;
+      justify-items: center;
+      flex-direction: row;
+      & > * {
+        flex: 1;
+        align-self: center;
+      }
+    }
+
+    .options__toggle {
+      margin: 0 auto;
+      max-width: 300px;
+    }
+
+    .options__update {
+      margin: 0 auto;
+      max-width: 200px;
+    }
+
+  }
+
+.graph-drawarea {
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25);
+  background-color: #e0e0e0;
+  & > svg {
+    display: block;
+    margin: 0 auto;
+  }
+}

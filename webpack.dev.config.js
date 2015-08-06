@@ -35,11 +35,11 @@ module.exports = {
     module: {
         loaders: [
             // SASS support: transform from SCSS into CSS
-            { test: /\.scss$/, exclude: /node_modules|bower_components/, loader: 'style!css!postcss-loader!sass?sourceMap' },
+            { test: /\.scss$/, exclude: /node_modules|bower_components/, loader: 'style!css!postcss!sass?sourceMap' },
             // Typescript support: transform TS into JS
-            { test: /\.ts$/, exclude: /node_modules|bower_components/, loader: 'ts-loader' },
+            { test: /\.ts$/, exclude: /node_modules|bower_components/, loader: 'ts' },
             // React support: transform JSX into JS
-            { test: /\.jsx?$/, exclude: /node_modules|bower_components/, loader: 'react-hot!babel-loader?{"stage":1}!eslint-loader'},
+            { test: /\.jsx?$/, exclude: /node_modules|bower_components/, loader: 'react-hot!babel?{"stage":1}!eslint'},
 
             // Loader for fonts
             { test: /\.woff2?($|\?)/, loader: "url?limit=10000&minetype=application/font-woff" },

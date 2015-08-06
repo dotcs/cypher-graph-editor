@@ -1,0 +1,36 @@
+a {
+  color: #00BCD4;
+  text-decoration: none;
+}
+
+
+#footer {
+  min-height: 50px;
+  background-color: #212121;
+  box-shadow: 0 -2px 2px rgba(124, 124, 124, 0.25);
+  padding: 1em 0;
+
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contributor-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  & > li {
+    margin: 0;
+    padding: 0;
+  }
+}
+.contributor__name { }
+.contributor__link {
+  margin: 0 .15em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+.loveIcon {
+  color: #a90000;
+  font-size: 1.3em;
+}

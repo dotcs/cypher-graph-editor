@@ -1,0 +1,20 @@
+.animFade-enter { opacity: 0.01; }
+.animFade-enter.animFade-enter-active {
+  opacity: 1;
+  transition: opacity .25s ease-in;
+}
+.animFade-leave { opacity: 1; }
+.animFade-leave.animFade-leave-active {
+  opacity: 0.01;
+  transition: opacity .15s ease-in;
+}
+
+@keyframes pulsate {
+  0% { transform: scale(1.0, 1.0); }
+  50% { transform: scale(1.2, 1.2); }
+  100% { transform: scale(1.0, 1.0); }
+}
+.animPulsate {
+  animation: pulsate 2s ease-out;
+  animation-iteration-count: infinite;
+}

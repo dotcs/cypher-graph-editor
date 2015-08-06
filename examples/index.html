@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cypher Graph Live Editor</title>
+  <meta name="description" content="Live editor that generates a graph from a Cypher query">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style type="text/css">
+    html {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      font-size: 13px;
+      line-height: 20px;
+    }
+
     .node {
       stroke: #222;
       stroke-width: 1.5px;
@@ -26,19 +39,25 @@
 </head>
 <body>
 
-<div class="js-react-cypherinput"
-     data-initial-statement='
-create (me:Person {name:"Michael"})
-create (fabian:Person {name:"Fabian"})
-create (peter:Person {name:"Peter"})
-create (graphgist:Project {name:"GraphGist"})
-create (me)-[:KNOWS {since:2006}]->(peter),
-(me)-[:WORKS_ON]->(graphgist),
-(fabian)-[:WORKS_ON]->(graphgist),
-(fabian)-[:KNOWS {since:2015}]->(me)
-CREATE (graphgist)<-[:WORKS_ON]-(peter)
-'></div>
+  <!-- This script adds the Roboto font to our project. For more detail go to this site:  http://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,500 -->
+  <script>
+    var WebFontConfig = {
+      google: { families: [ 'Roboto:400,300,500:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 
-<script src="http://localhost:3000/main.js"></script>
+  <div id="js-react-app"></div>
+
+  <script src="http://localhost:3000/main.js"></script>
+
 </body>
 </html>
