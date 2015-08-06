@@ -12,7 +12,8 @@ module.exports = React.createClass({
   },
   componentWillMount: function() {
     this.setState({
-      statement: this.props.statement.trim()
+      statement: this.props.statement.trim(),
+      autoupdate: true
     });
   },
   componentDidMount: function() {
@@ -22,6 +23,9 @@ module.exports = React.createClass({
     this.setState({
       statement: e.target.value
     });
+    if (this.state.autoupdate) {
+      this.handleUpdate();
+    }
   },
   handleUpdate: function(e) {
     if (e) { e.preventDefault(); }
@@ -29,6 +33,11 @@ module.exports = React.createClass({
     imageContainer.innerHTML = '';
     var graph = utils.parseCreate(this.state.statement, {measure: true});
     forceLayout(graph, imageContainer, {width: 500, height: 500});
+  },
+  handleAutoUpdate: function(e) {
+    this.setState({
+      autoupdate: !this.state.autoupdate
+    });
   },
   render: function() {
     return (
@@ -38,6 +47,10 @@ module.exports = React.createClass({
           placeholder="Your cypher expression ..."
           value={this.state.statement}
           ></textarea>
+        <input type="checkbox"
+          checked={this.state.autoupdate ? 'checked' : ''}
+          onChange={this.handleAutoUpdate}
+          /> Update automatically while typing
         <button onClick={this.handleUpdate}>Update</button>
         <div className="graph-drawarea" ref="graphDrawArea"></div>
       </div>
