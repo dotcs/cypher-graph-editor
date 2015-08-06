@@ -19,7 +19,6 @@ module.exports = React.createClass({
     this.handleUpdate();
   },
   handleChange: function(e) {
-    this._update(e.target.value);
     this.setState({
       statement: e.target.value
     });
