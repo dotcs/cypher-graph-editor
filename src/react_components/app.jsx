@@ -24,7 +24,9 @@ module.exports = React.createClass({
     return (
       <div id="app">
         <AppBar
-          iconElementRight={<FlatButton label="Github" />}
+          iconElementRight={
+            <FlatButton href="https://github.com/dotcs/cypher-graph-editor" label="Github" linkButton={true} />
+          }
           title="Cypher Graph Live Editor" />
         <CypherInput statement={`
 CREATE (me:Person {name:"Michael"})

@@ -8,6 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotcs/cypher-graph-editor"
+  },
   "keywords": [
     "neo4j",
     "cypher"
