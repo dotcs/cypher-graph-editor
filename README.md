@@ -28,7 +28,7 @@ npm install
 npm run serve
 
 # after the package is build via the development webpack server, open the page at
-# file:///path/to/cypher-graph-editor/examples/index-dev.html
+# file:///path/to/cypher-graph-editor/index-dev.html
 ```
 
 The development server that serves the development bundle will listen on port 3000.
