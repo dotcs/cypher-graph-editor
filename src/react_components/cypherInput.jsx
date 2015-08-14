@@ -36,7 +36,8 @@ module.exports = React.createClass({
       codemirrorOptions: {
         lineNumbers: true,
         mode: 'cypher',
-        smartIndent: false
+        smartIndent: false,
+        theme: 'neo'
       }
     });
   },

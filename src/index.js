@@ -3,6 +3,7 @@
 // CSS styles
 require('style-loader!css-loader!normalize.css/normalize.css');
 require('style-loader!css-loader!codemirror/lib/codemirror.css');
+require('style-loader!css-loader!codemirror/theme/neo.css');
 require('styles/main.scss');
 
 var React = require('react');
