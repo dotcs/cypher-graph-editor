@@ -6,6 +6,8 @@ The tool allows you to write a Cypher query and generate a graph based on the qu
 currently is in its early stages and lacks some features to make it really useful. If you like to contribute, please 
 add your pull-requests, to speed things up. See also below for some ideas how the editor can be improved.
 
+Give it a try and visit the [live version](http://dotcs.github.io/cypher-graph-editor/).
+
 At the moment the editor looks like this
 
 ![Alt text](/screenshots/main-screen.png?raw=true "Main screen of the editor")
