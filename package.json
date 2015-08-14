@@ -1,7 +1,7 @@
 {
   "name": "cypher-utils2",
   "version": "0.0.1",
-  "description": "Javascript utils for Cypher (neo4j)",
+  "description": "Live editor that generates a graph from a Cypher query",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.prod.config.js",
@@ -12,7 +12,7 @@
     "neo4j",
     "cypher"
   ],
-  "author": "",
+  "author": "Fabian Mueller <dotcs+npm@crashsource.de>",
   "license": "MIT",
   "dependencies": {
   },
