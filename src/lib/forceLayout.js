@@ -5,7 +5,7 @@
  * Michael Hunger (github: jexp, twitter: @mesirii)
  */
 
-var accelerateLayout = require('./accelerateLayout');
+var accelerateLayout = require('lib/accelerateLayout');
 
 module.exports = function(graph, element, size) {
   var div = d3.select(element);

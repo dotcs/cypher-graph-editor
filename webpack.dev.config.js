@@ -9,12 +9,12 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
-        './index'
+        './src/index'
     ],
 
     output: {
         path: path.resolve('./bundles/'),
-        filename: "[name].js",
+        filename: "[name].js"
     },
 
     plugins: [
@@ -35,23 +35,21 @@ module.exports = {
     module: {
         loaders: [
             // SASS support: transform from SCSS into CSS
-            { test: /\.scss$/, exclude: /node_modules|bower_components/, loader: 'style!css!postcss!sass?sourceMap' },
-            // Typescript support: transform TS into JS
-            { test: /\.ts$/, exclude: /node_modules|bower_components/, loader: 'ts' },
+            { test: /\.scss$/, exclude: /node_modules/, loader: 'style!css!postcss!sass?sourceMap' },
             // React support: transform JSX into JS
-            { test: /\.jsx?$/, exclude: /node_modules|bower_components/, loader: 'react-hot!babel?{"stage":1}!eslint'},
+            { test: /\.jsx?$/, exclude: /node_modules/, loader: 'react-hot-loader!babel?{"stage":1}!eslint'},
 
             // Loader for fonts
             { test: /\.woff2?($|\?)/, loader: "url?limit=10000&minetype=application/font-woff" },
             { test: /\.ttf($|\?)/, loader: "url?limit=10000&minetype=application/octet-stream" },
             { test: /\.eot($|\?)/, loader: "file" },
             { test: /\.svg($|\?)/, loader: "url?limit=10000&minetype=image/svg+xml" },
-        ],
+        ]
     },
 
     resolve: {
-        modulesDirectories: ['node_modules', 'bower_components'],
-        extensions: ['', '.ts', '.js', '.jsx']
+        root: [path.join(__dirname, "./node_modules"), path.join(__dirname, "./src")],
+        extensions: ['', '.js', '.jsx']
     },
 
     postcss: function () {

@@ -6,8 +6,8 @@ var mui = require('material-ui'),
     FlatButton = mui.FlatButton,
     AppBar = mui.AppBar;
 
-var CypherInput = require('./cypherInput');
-var Footer = require('./footer');
+var CypherInput = require('react_components/cypherInput');
+var Footer = require('react_components/footer');
 
 module.exports = React.createClass({
   displayName: 'App',

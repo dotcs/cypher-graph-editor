@@ -3,10 +3,10 @@
 // CSS styles
 require('style-loader!css-loader!normalize.css/normalize.css');
 require('style-loader!css-loader!codemirror/lib/codemirror.css');
-require('./src/styles/main.scss');
+require('styles/main.scss');
 
 var React = require('react');
-var App = require('./src/react_components/app');
+var App = require('react_components/app');
 
 var injectTapEventPlugin = require('react-tap-event-plugin');
 //Needed for onTouchTap

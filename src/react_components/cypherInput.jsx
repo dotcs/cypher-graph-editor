@@ -2,13 +2,16 @@
 
 var React = require('react/addons');
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-var CypherUtils = require('../../lib/cypherUtils');
+
+var CypherUtils = require('lib/cypherUtils');
+var forceLayout = require('lib/forceLayout');
 var utils = new CypherUtils();
-var forceLayout = require('../../lib/forceLayout');
+
 var mui = require('material-ui'),
     ThemeManager = new mui.Styles.ThemeManager(),
     Toggle = mui.Toggle,
     RaisedButton = mui.RaisedButton;
+
 var Codemirror = require('react-codemirror'),
     CypherMode = require('codemirror/mode/cypher/cypher'); // eslint-disable-line no-unused-vars
 
@@ -64,32 +67,35 @@ module.exports = React.createClass({
     });
   },
   render: function() {
-    //<input type="checkbox"
-    //       checked={this.state.autoupdate ? 'checked' : ''}
-    //       onChange={this.handleAutoUpdate}
-    //  /> Update automatically while typing
     return (
       <div className="cypherInput">
         <Codemirror
-          value={this.state.statement}
           onChange={this.handleChange}
           options={this.state.codemirrorOptions}
+          value={this.state.statement}
           />
         <div className="cypherInput__options">
           <div>
             <div className="options__toggle">
               <Toggle
-                name="autoupdate"
-                value="on"
+                defaultToggled={true}
                 label="Automatically update graph"
+                name="autoupdate"
                 onToggle={this.handleAutoUpdateStateChange}
-                defaultToggled={true}/>
+                value="on"
+                />
             </div>
           </div>
-          <ReactCSSTransitionGroup transitionName="animFade" transitionAppear={true}>
+          <ReactCSSTransitionGroup
+            transitionAppear={true}
+            transitionName="animFade"
+            >
           {!this.state.autoupdate &&
               <div className="options__update">
-                <RaisedButton onClick={this.handleUpdate} label="Manual update" />
+                <RaisedButton
+                  label="Manual update"
+                  onClick={this.handleUpdate}
+                  />
               </div>
           }
           </ReactCSSTransitionGroup>
