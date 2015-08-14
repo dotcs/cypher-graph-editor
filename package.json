@@ -1,5 +1,5 @@
 {
-  "name": "cypher-utils2",
+  "name": "cypher-graph-editor",
   "version": "0.0.1",
   "description": "Live editor that generates a graph from a Cypher query",
   "main": "index.js",
